@@ -10,7 +10,9 @@ export default function Home() {
     return (
         <div>
             <DashboardLayout>
+                <div>
 
+                </div>
             </DashboardLayout>
         </div>
     )
