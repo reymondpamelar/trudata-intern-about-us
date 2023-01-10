@@ -339,6 +339,12 @@ module.exports = {
                 }
             },
             fontFamily: {
+                neueBold:['PPNeueMontreal-Bold'],
+                neueBook:['PPNeueMontreal-Book'],
+                neueItalic:['PPNeueMontreal-Italic'],
+                neueMedium:['PPNeueMontreal-Medium'],
+                neueSemiBoldItalic:['PPNeueMontreal-SemiBoldItalic'],
+                neueThin:['PPNeueMontreal-Thin'],
                 asap:['Asap Condensed'],
                 'open-sans': ['"Open Sans"'],
                 poppins: ['Poppins'],

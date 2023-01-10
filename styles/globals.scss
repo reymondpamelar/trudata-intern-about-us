@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: 'PPNeueMontreal-bold';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Bold.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-book';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Book.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-italic';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Italic.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-medium';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Medium.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-SemiBolditalic';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-SemiBolditalic.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-thin';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Thin.otf);
+  }
+}
+
 [data-direction="ltr"] {
 * {
   direction: ltr;
@@ -73,7 +100,7 @@ html {
 }
 
 body {
-  @apply font-poppins antialiased text-sm text-gray-400;
+  @apply font-neueBook antialiased text-sm text-gray-400;
 }
 
 .w-96 {
