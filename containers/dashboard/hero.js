@@ -26,13 +26,13 @@ export default function Hero(){
                     </div>
                 </div>
             </div>
-            <div className={'z-10 text-8xl m-10 border-b border-black dark:border-zinc-400 mb-10 w-full'}>
+            <div className={'z-10 text-7xl xl:text-8xl m-10 border-b border-black dark:border-zinc-400 mb-10 w-full'}>
                 <div className={'pb-16 grid grid-cols-3'}>
-                    <div className={'col-span-2 font-neueBold grid items-end pr-16'}>
-                        <div className={'text-2xl font-neueBook flex items-center'}>
-                            <Icon.MapPin className={'mr-2'}/> Carlsbad
-                        </div>
+                    <div className={'col-span-2 font-neueBold flex items-end pr-16'}>
                         <div>
+                            <div className={'text-2xl font-neueBook flex items-center pb-4'}>
+                                <Icon.MapPin className={'mr-2'}/> Carlsbad
+                            </div>
                             Meet The Interns
                         </div>
                     </div>
