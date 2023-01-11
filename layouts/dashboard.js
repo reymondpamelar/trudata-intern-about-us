@@ -5,7 +5,7 @@ export default function DashboardLayout({children}) {
         ssr: false
     });
     return (
-        <div id={"main"} className={'overflow-x-hidden overflow-y-scroll relative w-screen h-screen bg-mainWhite dark:bg-zinc-800 transition ease-in-out duration-300'}>
+        <div id={"main"} className={'overflow-x-hidden overflow-y-scroll relative w-screen bg-mainWhite dark:bg-zinc-800 transition ease-in-out duration-300'}>
             <div className={''}>
                 <AnimatedCursor
                     color="255,255,255"

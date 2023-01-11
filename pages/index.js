@@ -1,18 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
 import DashboardLayout from "../layouts/dashboard";
 import Hero from "../containers/dashboard/hero";
-
-const inter = Inter({ subsets: ['latin'] })
+import AnimatedTimeline from "../components/AnimatedTimeline";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+    const timeline1 = useRef(null);
+    const timeline2 = useRef(null);
+    const timeline3 = useRef(null);
+
     return (
         <div>
-            <DashboardLayout>
-                <Hero/>
-            </DashboardLayout>
+            <AnimatedTimeline timeline1 = {timeline1}>
+                <DashboardLayout>
+                    <Hero timeline1 = {timeline1}/>
+                </DashboardLayout>
+            </AnimatedTimeline>
         </div>
     )
 }
