@@ -1,5 +1,7 @@
 import * as Icon from "react-feather"
 import DarkModeToggle from "../../components/dark-mode/toggle";
+import Line from "../../components/AnimatedTimeline/line";
+import React from "react";
 
 export default function Hero(props){
 
@@ -13,6 +15,7 @@ export default function Hero(props){
             </div>
             <div className={'absolute w-screen h-screen flex justify-center items-center'}>
                 <div className={'p-10 group'}>
+                    <Line timeline={props.timeline1} lineId={'1'} pointTo={'2'}/>
                     <div className={'border-b border-white px-2 mb-40 relative'}>
                         <div className={'group-hover:scale-[2.5] group-hover:-translate-y-3 transition ease-in-out duration-500'}>
                             <div className={'animate-bounce'}>
