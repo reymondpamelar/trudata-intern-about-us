@@ -14,7 +14,6 @@ export default function Hero(props){
             <div className={'absolute w-screen h-screen flex justify-center items-center'}>
                 <div className={'p-10 group'}>
                     <div className={'border-b border-white px-2 mb-40 relative'}>
-                        <div id="timeline1" ref={props.timeline1} className="absolute top-10 left-3 h-[20rem] w-2" />
                         <div className={'group-hover:scale-[2.5] group-hover:-translate-y-3 transition ease-in-out duration-500'}>
                             <div className={'animate-bounce'}>
                                 <div className={'animate-bounce '}>

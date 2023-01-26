@@ -5,8 +5,8 @@ const Timeline = ({ setObserver, callback, props }) => {
 
 
     const timeline1 = props.timeline1;
-    const timeline2 = useRef(null);
-    const timeline3 = useRef(null);
+    const timeline2 = props.timeline2;
+    const timeline3 = props.timeline3;
     const circle1 = useRef(null);
     const circle2 = useRef(null);
     const circle3 = useRef(null);
@@ -26,6 +26,8 @@ const Timeline = ({ setObserver, callback, props }) => {
 
     useEffect(() => {
         setObserver(timeline1.current);
+        setObserver(timeline2.current);
+        setObserver(timeline3.current);
     }, []);
 
 
