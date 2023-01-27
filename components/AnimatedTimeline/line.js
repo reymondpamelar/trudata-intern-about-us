@@ -23,7 +23,6 @@ export default function Line(props){
     }
 
     function drawLine(){
-        console.log(props.lineId)
         if(point.current){
             var pointer = point.current,
                 pointerBox = pointer?.getBoundingClientRect(),
@@ -41,8 +40,6 @@ export default function Line(props){
             //pointer.style.transform = "rotate("+degree+"deg)";
             setDegree(degree-180)
             setHeight(getDistance(centerX, centerY, x, y))
-            console.log(x, y, "degree: " +degree)
-            console.log(element)
         }
     }
 

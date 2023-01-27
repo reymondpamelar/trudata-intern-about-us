@@ -25,8 +25,8 @@ export default function InternDetails(props) {
         <div id={props.id} className={'relative w-[35rem] hidden'}>
             <div className={'absolute right-0 translate-x-[55%] -translate-y-[50%] '}>
                 <div ref={imgContainer} className={'scale-0 transition ease-in-out duration-1000'}>
-                    <div ref={img} className={'w-64 h-40 border rounded-xl absolute transition ease-in-out duration-1000 '}>
-
+                    <div ref={img} className={'w-64 h-40 overflow-hidden border rounded-xl absolute transition ease-in-out duration-1000 '}>
+                        <img src={'/carlsbad-office.png'} className={'opacity-90 brightness-75 blur-sm'}/>
                     </div>
                     <div  className={'w-64 h-40 border rounded-xl transition ease-in-out duration-1000'}>
 

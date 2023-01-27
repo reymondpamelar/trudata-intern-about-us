@@ -1,10 +1,29 @@
 import Line from "../../components/AnimatedTimeline/line";
 import InternDetails from "../../components/internDetails";
+import {useEffect, useState} from "react";
 
 export default function SoftwareEngineering(props){
     const timeline2 = props.timeline2,
         timeline3 = props.timeline3,
         timeline4 = props.timeline4
+
+    const requestInternFromServer = async() => {
+        const intern = await fetch('https://localhost:7083/api/Intern/getBy1004', {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+        return {
+            statusCode: intern.statusCode,
+            body: intern.body
+        }
+    }
+
+    const [internList, setInternList] = useState(null)
+    useEffect(() => {
+        setInternList(requestInternFromServer().body)
+    },[])
 
     return(
         <div className={" grid relative"}>
@@ -30,7 +49,7 @@ export default function SoftwareEngineering(props){
             </div>
             <div className={'relative mt-[50rem]'}>
                 <div className={'absolute right-64 flex items-end'}>
-                    <InternDetails id={'details2'} lineId={'line1'}/>
+                    <InternDetails details={internList} id={'details2'} lineId={'line1'}/>
                     <Line timeline={timeline3} pointId={'point3'} lineId={'3'} pointTo={"4"}/>
                 </div>
             </div>
