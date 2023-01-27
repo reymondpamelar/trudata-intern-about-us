@@ -13,7 +13,7 @@ const Timeline = ({ setObserver, callback, props }) => {
     const circle3 = useRef(null);
 
     const someCallback = () => {
-
+        document.getElementById('details1').classList.remove('hidden')
         callback();
     };
 
@@ -26,8 +26,8 @@ const Timeline = ({ setObserver, callback, props }) => {
     };
 
     useEffect(() => {
-        setObserver(timeline1.current);
-        setObserver(timeline2.current, );
+        setObserver(timeline1.current, someCallback);
+        setObserver(timeline2.current);
         setObserver(timeline3.current);
     }, []);
 

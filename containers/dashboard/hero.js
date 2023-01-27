@@ -15,7 +15,8 @@ export default function Hero(props){
             </div>
             <div className={'absolute w-screen h-screen flex justify-center items-center'}>
                 <div className={'p-10 group'}>
-                    <Line timeline={props.timeline1} lineId={'1'} pointTo={'2'}/>
+                    <Line timeline={props.timeline1} pointId={'point1'} lineId={'1'} pointTo={'2'}/>
+                    {/*
                     <div className={'border-b border-white px-2 mb-40 relative'}>
                         <div className={'group-hover:scale-[2.5] group-hover:-translate-y-3 transition ease-in-out duration-500'}>
                             <div className={'animate-bounce'}>
@@ -27,6 +28,9 @@ export default function Hero(props){
                             </div>
                         </div>
                     </div>
+                    */
+                    }
+
                 </div>
             </div>
             <div className={'z-10 text-7xl xl:text-8xl m-10 border-b border-black dark:border-zinc-400 mb-10 w-full'}>
