@@ -23,13 +23,14 @@ const Timeline = ({ setObserver, callback, props }) => {
     };
 
     const someCallback3 = () => {
+        document.getElementById('details3').classList.remove('hidden')
 
     };
 
     useEffect(() => {
         setObserver(timeline1.current, someCallback);
         setObserver(timeline2.current, someCallback2);
-        setObserver(timeline3.current);
+        setObserver(timeline3.current, someCallback3);
     }, []);
 
 
