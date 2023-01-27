@@ -24,24 +24,26 @@ export default function Line(props){
 
     function drawLine(){
         console.log(props.lineId)
-        var pointer = point.current,
-            pointerBox = pointer?.getBoundingClientRect(),
-            centerPoint = window.getComputedStyle(pointer).transformOrigin,
-            centers = centerPoint.split(" "),
-            centerY = pointerBox.top,
-            centerX = pointerBox.left
+        if(point.current){
+            var pointer = point.current,
+                pointerBox = pointer?.getBoundingClientRect(),
+                centerPoint = window.getComputedStyle(pointer).transformOrigin,
+                centers = centerPoint.split(" "),
+                centerY = pointerBox.top,
+                centerX = pointerBox.left
 
-        var element = document.getElementById(props.pointTo);
-        var position = element?.getBoundingClientRect();
-        var x = position?.left;
-        var y = position?.top;
-        var radians = Math.atan2(x - centerX, y - centerY);
-        var degree = (radians * (180 / Math.PI) * -1) + 180;
-        //pointer.style.transform = "rotate("+degree+"deg)";
-        setDegree(degree-180)
-        setHeight(getDistance(centerX, centerY, x, y))
-        console.log(x, y, "degree: " +degree)
-        console.log(element)
+            var element = document.getElementById(props.pointTo);
+            var position = element?.getBoundingClientRect();
+            var x = position?.left;
+            var y = position?.top;
+            var radians = Math.atan2(x - centerX, y - centerY);
+            var degree = (radians * (180 / Math.PI) * -1) + 180;
+            //pointer.style.transform = "rotate("+degree+"deg)";
+            setDegree(degree-180)
+            setHeight(getDistance(centerX, centerY, x, y))
+            console.log(x, y, "degree: " +degree)
+            console.log(element)
+        }
     }
 
     const showDetails = () => {

@@ -18,6 +18,7 @@ const Timeline = ({ setObserver, callback, props }) => {
     };
 
     const someCallback2 = () => {
+        document.getElementById('details2').classList.remove('hidden')
 
     };
 
@@ -27,7 +28,7 @@ const Timeline = ({ setObserver, callback, props }) => {
 
     useEffect(() => {
         setObserver(timeline1.current, someCallback);
-        setObserver(timeline2.current);
+        setObserver(timeline2.current, someCallback2);
         setObserver(timeline3.current);
     }, []);
 
