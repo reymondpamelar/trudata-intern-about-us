@@ -57,7 +57,7 @@ export default function Hero(props){
                             <div className={'font-neueBold text-lg'}>
                                 Software Engineering
                             </div>
-                            {props.internList.map((intern)=>{
+                            {props.internList?.map((intern)=>{
                                 if(intern.engineerType === "software"){
                                     return(
                                         <div>
@@ -72,7 +72,7 @@ export default function Hero(props){
                             <div className={'font-neueBold text-lg'}>
                                 Data Engineering
                             </div>
-                            {props.internList.map((intern)=>{
+                            {props.internList?.map((intern)=>{
                                 if(intern.engineerType === "data"){
                                     return(
                                         <div>
