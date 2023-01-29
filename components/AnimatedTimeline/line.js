@@ -46,8 +46,6 @@ export default function Line(props){
     const showDetails = () => {
         document.getElementById(props.details).classList.remove('hidden')
     };
-
-
     return(
         <div className={'relative flex items-center'}>
             <div className={'p-2 border border-white rounded-full absolute'}>

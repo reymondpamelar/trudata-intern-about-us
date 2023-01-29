@@ -12,9 +12,9 @@ const Timeline = ({ setObserver, callback, props }) => {
     const circle2 = useRef(null);
     const circle3 = useRef(null);
 
-    const someCallback = () => {
-        document.getElementById('details1').classList.remove('hidden')
-        callback();
+    const someCallback = (i) => {
+        if(document.getElementById('details'+i))
+            document.getElementById('details'+i).classList.remove('hidden')
     };
 
     const someCallback2 = () => {
@@ -28,9 +28,12 @@ const Timeline = ({ setObserver, callback, props }) => {
     };
 
     useEffect(() => {
-        setObserver(timeline1.current, someCallback);
-        setObserver(timeline2.current, someCallback2);
-        setObserver(timeline3.current, someCallback3);
+        setObserver(timeline1.current, ()=>someCallback(1));
+        setObserver(timeline2.current, ()=>someCallback(2));
+        //setObserver(timeline3.current, someCallback3);
+        props.internList?.map((intern, i) => {
+            setObserver(props.getRef(intern.id).current, ()=>someCallback(i+3))
+        })
     }, []);
 
 

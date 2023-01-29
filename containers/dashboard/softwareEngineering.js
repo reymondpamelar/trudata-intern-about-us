@@ -1,29 +1,11 @@
 import Line from "../../components/AnimatedTimeline/line";
 import InternDetails from "../../components/internDetails";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 export default function SoftwareEngineering(props){
     const timeline2 = props.timeline2,
         timeline3 = props.timeline3,
         timeline4 = props.timeline4
-
-    const requestInternFromServer = async() => {
-        const intern = await fetch('https://localhost:7083/api/Intern/getBy1004', {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json"
-            },
-        })
-        return {
-            statusCode: intern.statusCode,
-            body: intern.body
-        }
-    }
-
-    const [internList, setInternList] = useState(null)
-    useEffect(() => {
-        setInternList(requestInternFromServer().body)
-    },[])
 
     return(
         <div className={" grid relative"}>
@@ -40,26 +22,34 @@ export default function SoftwareEngineering(props){
                         </div>
                     </div>
                     <Line
-                        details={'details1'}
                         timeline={timeline2}
                         pointId={'point2'}
                         lineId={'2'}
                         pointTo={'3'}/>
                 </div>
             </div>
-            <div className={'relative mt-[50rem]'}>
-                <div className={'absolute right-64 flex items-end'}>
-                    <InternDetails details={internList} id={'details2'} lineId={'line1'}/>
-                    <Line timeline={timeline3} pointId={'point3'} lineId={'3'} pointTo={"4"}/>
-                </div>
-            </div>
-            <div className={'relative mt-[50rem]'}>
-                <div className={'absolute right-64 flex items-end'}>
-                    <InternDetails id={'details3'} lineId={'line2'}/>
-                    <Line timeline={timeline4} pointId={'point4'} lineId={'4'} pointTo={""}/>
-                </div>
-            </div>
-            <div className={'relative left-48 h-[50rem] flex items-end'}>
+            {
+                props.internList === null ?
+                    <div></div>
+                :
+                    (
+                        props.internList.map((intern, i) => {
+                            console.log('details'+(i+2))
+                            return (
+                                <div className={'relative mt-[50rem]'}>
+                                    <div className={'absolute right-64 flex items-end'}>
+                                        <InternDetails details={intern} id={'details'+(i+2)} lineId={'line'+(i+1)}/>
+                                        <Line key={intern.id} timeline={props.setRef(intern.id)} pointId={'point'+(i + 3)} lineId={''+(i + 3)} pointTo={''+(i + 4)}/>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    ))
+            }
+            {}
+
+            <div className={'relative mt-[100rem]'}>
+
             </div>
         </div>
     )
