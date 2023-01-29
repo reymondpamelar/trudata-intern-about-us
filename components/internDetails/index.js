@@ -39,7 +39,7 @@ export default function InternDetails(props) {
                         {props.details?.username}
                     </div>
                     <div  className={'group overflow-hidden pr-4'}>
-                        <div id={props.lineId} className={'border-b border-zinc-700 dark:border-white w-full p-1 translate-x-[35rem] transition ease-in-out duration-1000'}>
+                        <div id={props.lineId} className={'border-b border-white w-full p-1 translate-x-[35rem] transition ease-in-out duration-1000'}>
 
                         </div>
                     </div>

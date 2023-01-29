@@ -1,17 +1,23 @@
 import * as Icon from "react-feather"
 import DarkModeToggle from "../../components/dark-mode/toggle";
 import Line from "../../components/AnimatedTimeline/line";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 export default function Hero(props){
 
+    const [opacity, setOpacity] = useState(90)
+    useEffect(() => {
+
+        window.onscroll =()=>{
+            const opacity = 100-Math.min( window.scrollY/ 10, 100);
+            setOpacity(opacity)
+        }
+    },[])
+
     return(
         <div className={'h-screen flex items-end relative'}>
-            <div className={'absolute top-6 right-6 z-50 '}>
-                <DarkModeToggle/>
-            </div>
-            <div className={'absolute w-screen h-screen opacity-90 blur-[2px]'}>
-                <img src={'/carlsbad-office.png'} className={' object-cover h-full w-full opacity-50 brightness-90 '}/>
+            <div style={{opacity: opacity+'%'}} className={`fixed w-screen h-screen flex items-end`}>
+                <img src={'/carlsbad-office.png'} className={'blur-[2px] object-cover h-full w-full opacity-50 brightness-90 '}/>
             </div>
             <div className={'absolute w-screen h-screen flex justify-center items-center'}>
                 <div className={'p-10 group'}>
@@ -33,7 +39,7 @@ export default function Hero(props){
 
                 </div>
             </div>
-            <div className={'z-10 text-7xl xl:text-8xl m-10 border-b border-black dark:border-zinc-400 mb-10 w-full'}>
+            <div className={'z-10 text-7xl xl:text-8xl m-10 border-b border-black border-zinc-400 mb-10 w-full'}>
                 <div className={'pb-16 grid grid-cols-3'}>
                     <div className={'col-span-2 font-neueBold flex items-end pr-16'}>
                         <div>
@@ -44,7 +50,7 @@ export default function Hero(props){
                         </div>
                     </div>
                     <div className={'text-sm space-y-8 font-neueBook'}>
-                        <div className={'border-b border-black dark:border-zinc-400 pb-8'}>
+                        <div className={'border-b border-black border-zinc-400 pb-8'}>
                             <img src={'/final-trudata-logo white.webp'} className={'mix-blend-exclusion'}/>
                         </div>
                         <div className={'space-y-3'}>
