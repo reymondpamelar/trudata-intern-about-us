@@ -21,7 +21,7 @@ export default function Hero(props){
             </div>
             <div className={'absolute w-screen h-screen flex justify-center items-center'}>
                 <div className={'p-10 group'}>
-                    <Line timeline={props.timeline1} pointId={'point1'} lineId={'1'} pointTo={'2'}/>
+                    <Line timeline={props.timeline1} pointId={'point1'} lineId={'software1'} pointTo={'software2'}/>
                     {/*
                     <div className={'border-b border-white px-2 mb-40 relative'}>
                         <div className={'group-hover:scale-[2.5] group-hover:-translate-y-3 transition ease-in-out duration-500'}>
@@ -57,30 +57,30 @@ export default function Hero(props){
                             <div className={'font-neueBold text-lg'}>
                                 Software Engineering
                             </div>
-                            <div className={''}>
-                                Reymond Pamelar
-                            </div>
-                            <div className={''}>
-                                Connor Toro
-                            </div>
+                            {props.internList.map((intern)=>{
+                                if(intern.engineerType === "software"){
+                                    return(
+                                        <div>
+                                            {intern.username}
+                                        </div>
+                                    )
+                                }
+                            })}
                         </div>
 
                         <div className={'space-y-3'}>
                             <div className={'font-neueBold text-lg'}>
                                 Data Engineering
                             </div>
-                            <div className={''}>
-                                Reymond Pamelar
-                            </div>
-                            <div className={''}>
-                                Connor Toro
-                            </div>
-                            <div className={''}>
-                                Reymond Pamelar
-                            </div>
-                            <div className={''}>
-                                Connor Toro
-                            </div>
+                            {props.internList.map((intern)=>{
+                                if(intern.engineerType === "data"){
+                                    return(
+                                        <div>
+                                            {intern.username}
+                                        </div>
+                                    )
+                                }
+                            })}
                         </div>
                     </div>
                 </div>

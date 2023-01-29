@@ -3,36 +3,29 @@ import dynamic from "next/dynamic";
 
 const Timeline = ({ setObserver, callback, props }) => {
 
-
     const timeline1 = props.timeline1;
-    const timeline2 = props.timeline2;
-    const timeline3 = props.timeline3;
-    const timeline4 = props.timeline4;
-    const circle1 = useRef(null);
-    const circle2 = useRef(null);
-    const circle3 = useRef(null);
+    const softwareTimeline = props.softwareTimeline;
+    const dataTimeline = props.dataTimeline
 
-    const someCallback = (i) => {
-        if(document.getElementById('details'+i))
-            document.getElementById('details'+i).classList.remove('hidden')
-    };
-
-    const someCallback2 = () => {
-        document.getElementById('details2').classList.remove('hidden')
-
-    };
-
-    const someCallback3 = () => {
-        document.getElementById('details3').classList.remove('hidden')
-
+    const someCallback = (engineerType,i) => {
+        if(document.getElementById(engineerType+'Details'+i))
+            document.getElementById(engineerType+'Details'+i).classList.remove('hidden')
     };
 
     useEffect(() => {
-        setObserver(timeline1.current, ()=>someCallback(1));
-        setObserver(timeline2.current, ()=>someCallback(2));
-        //setObserver(timeline3.current, someCallback3);
+        setObserver(timeline1.current, ()=>someCallback("software",1));
+        setObserver(softwareTimeline.current, ()=>someCallback("software",2));
         props.internList?.map((intern, i) => {
-            setObserver(props.getRef(intern.id).current, ()=>someCallback(i+3))
+            if(intern.engineerType === "software"){
+                setObserver(props.getRef(intern.id).current, ()=>someCallback("software",i+3))
+            }
+        })
+
+        setObserver(dataTimeline.current, ()=>someCallback("data",1));
+        props.internList?.map((intern, i) => {
+            if(intern.engineerType === "data"){
+                setObserver(props.getRef(intern.id).current, ()=>someCallback("data",i+3))
+            }
         })
     }, []);
 
