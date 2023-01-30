@@ -6,7 +6,7 @@ export default function SoftwareEngineering(props){
 
     return(
         <div className={" grid relative"}>
-            <div className={'flex font-neueBold text-7xl relative mt-[50rem]'}>
+            <div className={'flex font-neueBold text-7xl relative mt-[80rem]'}>
                 <div className={'flex items-center w-full'}>
                     <div className={'h-[10rem] w-full flex justify-start'}>
                         <div id={'softwareDetails1'} className={' hidden animate-slideRight pl-20 w-[35rem]'}>
@@ -24,6 +24,29 @@ export default function SoftwareEngineering(props){
                             pointId={'softwarePoint2'}
                             lineId={'software2'}
                             pointTo={'software3'}/>
+                        <div className={'absolute'}>
+                            <div className={'relative right-32 top-[20rem]'}>
+                                <Line
+                                    timeline={props.setRef("softwareLine1")}
+                                    pointId={'software_Line1'}
+                                    lineId={'software_Line1'}
+                                    pointTo={'software2'}/>
+                            </div>
+                            <div className={'relative left-[20rem] bottom-[30rem]'}>
+                                <Line
+                                    timeline={props.setRef("softwareLine2")}
+                                    pointId={'software_Line2'}
+                                    lineId={'software_Line2'}
+                                    pointTo={'software2'}/>
+                            </div>
+                            <div className={'relative right-32 bottom-[60rem]'}>
+                                <Line
+                                    timeline={props.setRef("softwareLine3")}
+                                    pointId={'software_Line3'}
+                                    lineId={'software_Line3'}
+                                    pointTo={'software2'}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from "react";
 export default function DataEngineering(props){
 
     return(
-        <div className={" grid relative mt-[20rem]"}>
+        <div className={" grid relative mt-[30rem]"}>
             <div className={'flex font-neueBold text-7xl relative mt-[50rem]'}>
                 <div className={'flex items-center w-full'}>
                     <div className={'h-[10rem] w-full flex justify-end'}>
@@ -24,6 +24,29 @@ export default function DataEngineering(props){
                             pointId={'dataPoint2'}
                             lineId={'data2'}
                             pointTo={'data3'}/>
+                        <div className={'absolute'}>
+                            <div className={'relative right-32 bottom-32'}>
+                                <Line
+                                    timeline={props.setRef("dataLine1")}
+                                    pointId={'data_Line1'}
+                                    lineId={'data_Line1'}
+                                    pointTo={'data2'}/>
+                            </div>
+                            <div className={'relative right-32 bottom-[30rem]'}>
+                                <Line
+                                    timeline={props.setRef("dataLine2")}
+                                    pointId={'data_Line2'}
+                                    lineId={'data_Line2'}
+                                    pointTo={'data2'}/>
+                            </div>
+                            <div className={'relative right-[20] bottom-[40rem]'}>
+                                <Line
+                                    timeline={props.setRef("dataLine3")}
+                                    pointId={'data_Line3'}
+                                    lineId={'data_Line3'}
+                                    pointTo={'data2'}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

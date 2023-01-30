@@ -34,7 +34,7 @@ export default function Home() {
 
 
     return (
-        <div>
+        <div className={'bg-zinc-800'}>
             <AnimatedTimeline
                 timeline1 = {timeline1}
                 softwareTimeline = {softwareTimeline}
