@@ -15,10 +15,10 @@ export default function DashboardLayout({children}) {
                     outerAlpha={0}
                     outerStyle={{
                         border: '1px solid #fff',
-                        mixBlendMode: 'exclusion'
+                        //mixBlendMode: 'exclusion'
                     }}
                     innerStyle={{
-                        mixBlendMode: 'exclusion'
+                        //mixBlendMode: 'exclusion'
                     }}
                 />
             </div>

@@ -30,10 +30,10 @@ export default function InternDetails(props) {
     if(props.details.engineerType === "data"){
         return(
             <div id={props.id} className={'relative w-[35rem] hidden'}>
-                <div className={'absolute left-0 -translate-x-[55%] -translate-y-[50%] '}>
+                <div className={'absolute left-0 -translate-x-[55%] -translate-y-[50%] z-20 hover:z-30'}>
                     <div ref={imgContainer} className={'scale-0 transition ease-in-out duration-300'}>
                         <div ref={img} className={'w-64 h-40 overflow-hidden border rounded-xl absolute transition ease-in-out duration-1000 '}>
-                            <img src={props.details?.image} className={'opacity-90 brightness-75 blur-[2px] hover:blur-none hover:brightness-100 transition ease-in-out duration-300'}/>
+                            <img src={props.details?.image} className={'opacity-90 brightness-75 blur-[2px] hover:blur-none hover:brightness-100 transition ease-in-out duration-300 z-20'}/>
                         </div>
                         <div  className={'w-64 h-40 border rounded-xl transition ease-in-out duration-300'}>
 
@@ -45,7 +45,7 @@ export default function InternDetails(props) {
                         <div ref={name} className={'ml-5 pl-16 font-neueBold animate__animated animate__delay-1s animate__faster animate__fadeInUp'}>
                             {props.details?.username}
                         </div>
-                        <div  className={'group overflow-hidden pl-12'}>
+                        <div  className={'group overflow-hidden pl-12 z-30'}>
                             <div id={props.lineId} className={'border-b border-white w-full p-1 -translate-x-[35rem] transition ease-in-out duration-1000'}>
 
                             </div>
@@ -72,7 +72,7 @@ export default function InternDetails(props) {
     }
     return(
         <div id={props.id} className={'relative w-[35rem] hidden'}>
-            <div className={'absolute right-0 translate-x-[55%] -translate-y-[50%] '}>
+            <div className={'absolute right-0 translate-x-[55%] -translate-y-[50%] z-20 hover:z-30'}>
                 <div ref={imgContainer} className={'scale-0 transition ease-in-out duration-300'}>
                     <div ref={img} className={'w-64 h-40 overflow-hidden border rounded-xl absolute transition ease-in-out duration-1000 '}>
                         <img src={props.details?.image} className={'opacity-90 brightness-75 blur-[2px] hover:blur-none hover:brightness-100 transition ease-in-out duration-300'}/>
@@ -82,16 +82,16 @@ export default function InternDetails(props) {
                     </div>
                 </div>
             </div>
-            <div className={'uppercase h-full flex items-center text-4xl absolute -top-8 w-full'}>
+            <div className={'uppercase h-full flex items-center text-4xl absolute -top-10 w-full'}>
                 <div className={'w-full'}>
                     <div ref={name} className={'mr-5 pr-16 font-neueBold animate__animated animate__delay-1s animate__faster animate__fadeInUp'}>
                         {props.details?.username}
                     </div>
-                    <div  className={'group overflow-hidden pr-4'}>
-                        <div id={props.lineId} className={'border-b border-white w-full p-1 translate-x-[35rem] transition ease-in-out duration-1000'}>
+                </div>
+            </div>
+            <div  className={'group overflow-hidden bottom-0 pr-4 absolute w-full z-30'}>
+                <div id={props.lineId} className={'border-b border-white w-full p-1 translate-x-[35rem] transition ease-in-out duration-1000'}>
 
-                        </div>
-                    </div>
                 </div>
             </div>
             <div ref={background} className={'absolute inset-x-0'}>

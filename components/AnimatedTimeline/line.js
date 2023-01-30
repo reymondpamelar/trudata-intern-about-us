@@ -47,7 +47,7 @@ export default function Line(props){
         document.getElementById(props.details).classList.remove('hidden')
     };
     return(
-        <div className={'relative flex items-center'}>
+        <div className={'relative flex items-center z-30'}>
             <div className={'p-2 border border-white rounded-full absolute'}>
                 <div ref={point} id={props.lineId} className={'p-2 bg-white rounded-full relative'}>
                     <div style={{rotate: +degree+"deg", height:height}} ref={props.timeline} id={props.pointId} className={`origin-top w-[0.1rem] absolute`} />
