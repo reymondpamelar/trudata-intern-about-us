@@ -68,10 +68,10 @@ export default function Hero(props){
                                 <div className={'font-neueBold text-lg'}>
                                     Software Engineering
                                 </div>
-                                {props.internList?.map((intern)=>{
+                                {props.internList?.filter((intern => intern.engineerType === "software")).map((intern,i)=>{
                                     if(intern.engineerType === "software"){
                                         return(
-                                            <div>
+                                            <div onClick={() => document.getElementById('software'+(i+3)).scrollIntoView({behavior:"smooth", block:"center", inline:"start"})}>
                                                 {intern.username}
                                             </div>
                                         )
@@ -83,10 +83,10 @@ export default function Hero(props){
                                 <div className={'font-neueBold text-lg'}>
                                     Data Engineering
                                 </div>
-                                {props.internList?.map((intern)=>{
+                                {props.internList?.filter((intern => intern.engineerType === "data")).map((intern, i)=>{
                                     if(intern.engineerType === "data"){
                                         return(
-                                            <div>
+                                            <div onClick={() => document.getElementById('data'+(i+3)).scrollIntoView({behavior:"smooth", block:"center", inline:"start"})}>
                                                 {intern.username}
                                             </div>
                                         )

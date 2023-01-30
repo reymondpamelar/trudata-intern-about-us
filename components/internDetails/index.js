@@ -9,18 +9,19 @@ export default function InternDetails(props) {
 
     useEffect(() => {
         setInterval( function() {
-            if(!document.getElementById(props.id).classList.contains('hidden')){
-                document.getElementById(props.lineId).classList.remove('-translate-x-[35rem]')
-                document.getElementById(props.lineId).classList.add('translate-x-0')
-                imgContainer.current.classList.remove('scale-0')
+            if(!document.getElementById(props.id)?.classList.contains('hidden')){
+                document.getElementById(props.lineId)?.classList.remove('-translate-x-[35rem]')
+                document.getElementById(props.lineId)?.classList.remove('translate-x-[35rem]')
+                document.getElementById(props.lineId)?.classList.add('translate-x-0')
+                imgContainer.current?.classList.remove('scale-0')
                 setTimeout(() => {
                     if(props.details.engineerType === "software"){
-                        img.current.classList.add('-translate-x-8')
-                        img.current.classList.add('-translate-y-8')
+                        img.current?.classList.add('-translate-x-8')
+                        img.current?.classList.add('-translate-y-8')
                     }
-                    if(props.details.engineerType === "data"){
-                        img.current.classList.add('translate-x-8')
-                        img.current.classList.add('-translate-y-8')
+                    if(props.details?.engineerType === "data"){
+                        img.current?.classList.add('translate-x-8')
+                        img.current?.classList.add('-translate-y-8')
                     }
                 },300)
             }

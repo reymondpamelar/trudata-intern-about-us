@@ -13,7 +13,7 @@ export default function Home() {
     const dataTimeline = useRef(null);
 
     const requestInternFromServer = async() => {
-        const intern = await fetch('https://localhost:44374/api/Intern/getAllInterns', {
+        const intern = await fetch('https://localhost:7083/api/Intern/getAllInterns', {
             method: 'GET',
         })
         return {
