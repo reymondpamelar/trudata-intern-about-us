@@ -9,7 +9,7 @@ export default function DataEngineering(props){
             <div className={'flex font-neueBold text-7xl relative mt-[50rem]'}>
                 <div className={'flex items-center w-full'}>
                     <div className={'h-[10rem] w-full flex justify-end'}>
-                        <div id={'dataDetails1'} className={' hidden animate-slideLeft pr-20 w-[35rem] text-right'}>
+                        <div id={'dataDetails1'} className={'hidden animate-slideLeft pr-20 w-[35rem] text-right'}>
                             <div>
                                 Data Engineering
                                 <div className={' font-neueItalic text-sm pt-10'}>
@@ -35,9 +35,9 @@ export default function DataEngineering(props){
                         props.internList.filter((intern => intern.engineerType === "data")).map((intern, i) => {
                             return (
                                 <div className={'relative mt-[50rem]'}>
-                                    <div className={'absolute right-64 flex items-end'}>
-                                        <InternDetails details={intern} id={'data_details'+(i+2)} lineId={'dataLine'+(i+1)}/>
+                                    <div className={'absolute left-64 flex'}>
                                         <Line key={intern.id} timeline={props.setRef(intern.id)} pointId={'dataPoint'+(i + 3)} lineId={'data'+(i + 3)} pointTo={'data'+(i + 4)}/>
+                                        <InternDetails details={intern} id={'dataDetails'+(i+2)} lineId={'dataLine'+(i+1)}/>
                                     </div>
                                 </div>
                             )
