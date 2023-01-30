@@ -57,7 +57,9 @@ export default function Home() {
                         internList={internList}
                         setRef={setRef}
                     />
-                    <Contact/>
+                    <Contact
+                        setRef={setRef}
+                    />
 
                 </DashboardLayout>
             </AnimatedTimeline>

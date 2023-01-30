@@ -100,6 +100,7 @@ module.exports = {
                 slideLeft: 'slideLeft 1s',
                 slideInDown: 'slideInDown 1s',
                 rotate180: 'rotate180 ',
+                pingOnce: 'ping 1s ease-in-out'
             },
             keyframes:{
                 loaderRotate: {

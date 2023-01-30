@@ -9,17 +9,18 @@ const Timeline = ({ setObserver, callback, props }) => {
     const dataTimeline = props.dataTimeline
 
     const someCallback = (engineerType,i) => {
-        console.log(i+2)
-        if(document.getElementById(engineerType+'Details'+i))
+        console.log(engineerType, i)
+        if(document.getElementById(engineerType+'Details'+i)){
             document.getElementById(engineerType+'Details'+i).classList.remove('hidden')
+            document.getElementById(engineerType+''+(i+1)).classList.add('animate-pingOnce')
+        }
+
     };
+
 
     useEffect(() => {
         setObserver(timeline1.current, ()=>someCallback("software",1));
 
-        setObserver(props.getRef("softwareLine1").current);
-        setObserver(props.getRef("softwareLine2").current);
-        setObserver(props.getRef("softwareLine3").current);
         setObserver(softwareTimeline.current, ()=>someCallback("software",2));
 
         props.internList?.filter((intern => intern.engineerType === "software")).map((intern, i) => {
@@ -33,9 +34,6 @@ const Timeline = ({ setObserver, callback, props }) => {
             }
         })
 
-        setObserver(props.getRef("dataLine1").current);
-        setObserver(props.getRef("dataLine2").current);
-        setObserver(props.getRef("dataLine3").current);
         setObserver(dataTimeline.current, ()=>someCallback("data",2));
 
         props.internList?.filter((intern => intern.engineerType === "data")).map((intern, i) => {
@@ -43,6 +41,8 @@ const Timeline = ({ setObserver, callback, props }) => {
                 setObserver(props.getRef(intern.id).current, ()=>someCallback("data",i+3))
             }
         })
+        setObserver(props.getRef("contact").current, ()=>someCallback("contact"))
+        setObserver(props.getRef("contact1").current, ()=>someCallback("contact"))
     }, []);
 
 

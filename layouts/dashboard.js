@@ -17,9 +17,6 @@ export default function DashboardLayout({children}) {
                         border: '1px solid #fff',
                         //mixBlendMode: 'exclusion'
                     }}
-                    innerStyle={{
-                        //mixBlendMode: 'exclusion'
-                    }}
                 />
             </div>
             <div className="flex relative h-full">

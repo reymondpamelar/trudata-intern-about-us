@@ -24,29 +24,6 @@ export default function DataEngineering(props){
                             pointId={'dataPoint2'}
                             lineId={'data2'}
                             pointTo={'data3'}/>
-                        <div className={'absolute'}>
-                            <div className={'relative right-32 bottom-32'}>
-                                <Line
-                                    timeline={props.setRef("dataLine1")}
-                                    pointId={'data_Line1'}
-                                    lineId={'data_Line1'}
-                                    pointTo={'data2'}/>
-                            </div>
-                            <div className={'relative right-32 bottom-[30rem]'}>
-                                <Line
-                                    timeline={props.setRef("dataLine2")}
-                                    pointId={'data_Line2'}
-                                    lineId={'data_Line2'}
-                                    pointTo={'data2'}/>
-                            </div>
-                            <div className={'relative right-[20] bottom-[40rem]'}>
-                                <Line
-                                    timeline={props.setRef("dataLine3")}
-                                    pointId={'data_Line3'}
-                                    lineId={'data_Line3'}
-                                    pointTo={'data2'}/>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -56,6 +33,17 @@ export default function DataEngineering(props){
                     :
                     (
                         props.internList.filter((intern => intern.engineerType === "data")).map((intern, i) => {
+                            if(i === props.internList.filter((intern => intern.engineerType === "data")).length -1){
+                                return(
+                                    <div className={'relative mt-[50rem]'}>
+                                        <div className={'absolute left-64 flex'}>
+                                            <Line key={intern.id} timeline={props.setRef(intern.id)} pointId={'dataPoint'+(i + 3)} lineId={'data'+(i + 3)} pointTo={'contact'}/>
+                                            <InternDetails details={intern} id={'dataDetails'+(i+2)} lineId={'dataLine'+(i+1)}/>
+                                        </div>
+                                    </div>
+                                )
+                            }
+
                             return (
                                 <div className={'relative mt-[50rem]'}>
                                     <div className={'absolute left-64 flex'}>
@@ -67,11 +55,6 @@ export default function DataEngineering(props){
                             }
                         ))
             }
-            {}
-
-            <div className={'relative mt-[100rem]'}>
-
-            </div>
         </div>
     )
 }

@@ -48,10 +48,16 @@ export default function Line(props){
     };
     return(
         <div className={'relative flex items-center z-30'}>
-            <div className={'p-2 border border-white rounded-full absolute'}>
-                <div ref={point} id={props.lineId} className={'p-2 bg-white rounded-full relative'}>
-                    <div style={{rotate: +degree+"deg", height:height}} ref={props.timeline} id={props.pointId} className={`origin-top w-[0.1rem] absolute`} />
+            <div className={'absolute'}>
+                <div ref={point} id={props.lineId} className={'p-2 border border-white rounded-full absolute'}>
+                    <div className={'p-2 bg-white rounded-full relative'}>
+                    </div>
                 </div>
+                <div className={'p-2 border border-white rounded-full absolute animate-reversePing'}>
+                    <div className={'p-2 bg-white rounded-full relative'}>
+                    </div>
+                </div>
+                <div style={{rotate: +degree+"deg", height:height}} ref={props.timeline} id={props.pointId} className={`origin-top w-[0.1rem] absolute left-4 top-4`} />
             </div>
         </div>
     )
