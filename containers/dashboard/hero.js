@@ -71,7 +71,7 @@ export default function Hero(props){
                                 {props.internList?.filter((intern => intern.engineerType === "software")).map((intern,i)=>{
                                     if(intern.engineerType === "software"){
                                         return(
-                                            <div onClick={() => document.getElementById('software'+(i+3)).scrollIntoView({behavior:"smooth", block:"center", inline:"start"})}>
+                                            <div className={'hover:font-neueBold'} onClick={() => document.getElementById('software'+(i+3)).scrollIntoView({behavior:"smooth", block:"center", inline:"start"})}>
                                                 {intern.username}
                                             </div>
                                         )
@@ -86,7 +86,7 @@ export default function Hero(props){
                                 {props.internList?.filter((intern => intern.engineerType === "data")).map((intern, i)=>{
                                     if(intern.engineerType === "data"){
                                         return(
-                                            <div onClick={() => document.getElementById('data'+(i+3)).scrollIntoView({behavior:"smooth", block:"center", inline:"start"})}>
+                                            <div className={'hover:font-neueBold'} onClick={() => document.getElementById('data'+(i+3)).scrollIntoView({behavior:"smooth", block:"center", inline:"start"})}>
                                                 {intern.username}
                                             </div>
                                         )

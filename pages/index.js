@@ -5,6 +5,7 @@ import React, {createRef, useEffect, useRef, useState} from "react";
 import SoftwareEngineering from "../containers/dashboard/softwareEngineering";
 import useDynamicRefs from 'use-dynamic-refs';
 import DataEngineering from "../containers/dashboard/dataEngineering";
+import Contact from "../containers/dashboard/contact";
 
 export default function Home() {
     const timeline1 = useRef(null);
@@ -56,6 +57,7 @@ export default function Home() {
                         internList={internList}
                         setRef={setRef}
                     />
+                    <Contact/>
 
                 </DashboardLayout>
             </AnimatedTimeline>
