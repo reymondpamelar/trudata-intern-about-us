@@ -45,22 +45,24 @@ export default function Home() {
             >
                 <DashboardLayout>
                     <Hero timeline1={timeline1} internList={internList}/>
-                    <SoftwareEngineering
-                        softwareTimeline={softwareTimeline}
-                        timelineList={timelineList}
-                        internList={internList}
-                        setRef={setRef}
-                    />
-                    <DataEngineering
-                        dataTimeline={dataTimeline}
-                        timelineList={timelineList}
-                        internList={internList}
-                        setRef={setRef}
-                    />
-                    <Contact
-                        internList={internList}
-                        setRef={setRef}
-                    />
+                    <div className={'grid justify-center'}>
+                        <SoftwareEngineering
+                            softwareTimeline={softwareTimeline}
+                            timelineList={timelineList}
+                            internList={internList}
+                            setRef={setRef}
+                        />
+                        <DataEngineering
+                            dataTimeline={dataTimeline}
+                            timelineList={timelineList}
+                            internList={internList}
+                            setRef={setRef}
+                        />
+                        <Contact
+                            internList={internList}
+                            setRef={setRef}
+                        />
+                    </div>
 
                 </DashboardLayout>
             </AnimatedTimeline>
