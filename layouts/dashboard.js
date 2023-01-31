@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic'
-import AnimatedCursor from "react-animated-cursor";
 
 export default function DashboardLayout({children}) {
 
+    const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {ssr:false})
     return (
         <div id={"main"} className={'overflow-x-hidden overflow-y-scroll relative w-screen bg-zinc-800 transition ease-in-out duration-300'}>
             <div className={''}>
