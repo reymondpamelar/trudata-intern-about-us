@@ -28,7 +28,7 @@ const Dropdown = (props) => {
         <div className="text-zinc-300 relative">
             <div ref={buttonRef} onClick={() => setHidden(!hidden)} className={'bg-zinc-700 rounded-xl h-16 flex items-center justify-center shadow-lg relative transition ease-in-out duration-200 hover:bg-[#D9551C]'}>
                 {currentIntern}
-                <div className={'absolute right-4'}>
+                <div className={`absolute right-4 transition ease-in-out duration-200 ${hidden ? 'rotate-180' : ''}`}>
                     <Icon.ChevronUp/>
                 </div>
             </div>

@@ -13,7 +13,7 @@ export default function DataEngineering(props){
                             <div>
                                 Data Engineering
                                 <div className={' font-neueItalic text-sm pt-10'}>
-                                    “Software engineering is the application of principles used in the field of engineering, which usually deals with physical systems, to the design, development, testing, deployment and management of software systems.”
+                                    “A data engineer is an IT worker whose primary job is to prepare data for analytical or operational uses.”
                                 </div>
                             </div>
                         </div>

@@ -31,12 +31,12 @@ export default function InternDetails(props) {
     if(props.details.engineerType === "data"){
         return(
             <div id={props.id} className={'relative w-[35rem] hidden top-4'}>
-                <div className={'absolute left-0 -translate-x-[55%] -translate-y-[50%] z-20 hover:z-30'}>
+                <div className={'absolute left-0 -translate-x-[55%] -translate-y-[50%] hover:z-30'}>
                     <div ref={imgContainer} className={'scale-0 transition ease-in-out duration-300'}>
-                        <div ref={img} className={'w-64 h-40 overflow-hidden border rounded-xl absolute transition ease-in-out duration-1000 '}>
-                            <img src={props.details?.image} className={'opacity-90 brightness-75 blur-[2px] hover:blur-none hover:brightness-100 transition ease-in-out duration-300 z-20'}/>
+                        <div ref={img} className={'w-64 h-64 overflow-hidden border rounded-xl absolute transition ease-in-out duration-1000 '}>
+                            <img src={props.details?.image} className={'opacity-90 brightness-75 blur-[2px] hover:blur-none hover:brightness-100 transition ease-in-out duration-300'}/>
                         </div>
-                        <div  className={'w-64 h-40 border rounded-xl transition ease-in-out duration-300'}>
+                        <div  className={'w-64 h-64 border rounded-xl transition ease-in-out duration-300'}>
 
                         </div>
                     </div>
@@ -59,7 +59,7 @@ export default function InternDetails(props) {
                             <div className={'font-neueBold pt-4'}>
                                 BACKGROUND
                             </div>
-                            <div className={'mt-4 pl-32'}>
+                            <div className={'mt-4 pl-40'}>
                                 {props.details?.description}
                             </div>
                             <button onClick={() => window.open(props.details.linkedInURL, "_blank")} className={'mt-4 rounded-full p-0.5 px-6 border text-lg hover:bg-white hover:text-zinc-500 transition ease-in-out duration-200'}>
@@ -73,12 +73,12 @@ export default function InternDetails(props) {
     }
     return(
         <div id={props.id} className={'relative w-[35rem] hidden top-4'}>
-            <div className={'absolute right-0 translate-x-[55%] -translate-y-[50%] z-20 hover:z-30'}>
+            <div className={'absolute right-0 translate-x-[55%] -translate-y-[50%] hover:z-20'}>
                 <div ref={imgContainer} className={'scale-0 transition ease-in-out duration-300'}>
-                    <div ref={img} className={'w-64 h-40 overflow-hidden border rounded-xl absolute transition ease-in-out duration-1000 '}>
-                        <img src={props.details?.image} className={'opacity-90 brightness-75 blur-[2px] hover:blur-none hover:brightness-100 transition ease-in-out duration-300'}/>
+                    <div ref={img} className={'w-64 h-64 flex items-center overflow-hidden border rounded-xl absolute transition ease-in-out duration-1000 '}>
+                        <img src={props.details?.image} className={' pt-20 object-fill object-bottom opacity-90 brightness-75 blur-[2px] hover:blur-none hover:brightness-100 transition ease-in-out duration-300'}/>
                     </div>
-                    <div  className={'w-64 h-40 border rounded-xl transition ease-in-out duration-300'}>
+                    <div  className={'w-64 h-64 border rounded-xl transition ease-in-out duration-300'}>
 
                     </div>
                 </div>
@@ -101,7 +101,7 @@ export default function InternDetails(props) {
                         <div className={'font-neueBold pt-4'}>
                             BACKGROUND
                         </div>
-                        <div className={'mt-4 pr-32'}>
+                        <div className={'mt-4 pr-40'}>
                             {props.details?.description}
                         </div>
                         <button onClick={() => window.open(props.details.linkedInURL, "_blank")} className={'mt-4 rounded-full p-0.5 px-6 border text-lg hover:bg-white hover:text-zinc-500 transition ease-in-out duration-200'}>
