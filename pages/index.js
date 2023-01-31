@@ -58,6 +58,7 @@ export default function Home() {
                         setRef={setRef}
                     />
                     <Contact
+                        internList={internList}
                         setRef={setRef}
                     />
 

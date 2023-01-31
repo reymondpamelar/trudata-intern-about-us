@@ -171,3 +171,8 @@ body {
     background-position: 100% 50%;
   }
 }
+
+.swal2-border-radius { -webkit-border-radius: 20px !important; -moz-border-radius: 20px !important; border-radius: 20px !important; }
+.swal2-modal {
+  -webkit-border-radius: 20px !important; -moz-border-radius: 20px !important; border-radius: 20px !important;
+}

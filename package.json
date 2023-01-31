@@ -27,6 +27,8 @@
     "react-timeline-animation": "^1.2.3",
     "react-xarrows": "^2.0.2",
     "sass": "^1.57.1",
+    "sweetalert2": "^11.7.1",
+    "sweetalert2-react-content": "^5.0.7",
     "tailwindcss": "^3.2.4",
     "use-dynamic-refs": "^1.0.0"
   }
